@@ -143,10 +143,6 @@ function validateInputFormat(cells, matrixSize) {
 }
 
 
-function displayProblem() {
-    const tableHtml = generateTableHtml(false);
-    document.getElementById("problemTable").innerHTML = tableHtml;
-}
 
 function displaySolution() {
     const tableHtml = generateTableHtml(true);
@@ -191,6 +187,7 @@ function generateTableHtml(withSolution) {
 
 
 function solveKenKen() {
+
     if (!validateInputFormat(cells, matrixSize)) {
         // Ngừng tiến hành giải nếu định dạng không hợp lệ
         console.log("Định dạng không hợp lệ. Vui lòng nhập lại.");
@@ -221,7 +218,7 @@ function solveKenKen() {
                 restorePossibleValues(oldPossibleValues);
             }
         }
-    
+        
         return false;
     }
     // Hàm Constraint Propagation
@@ -355,4 +352,7 @@ function getPossibleValues(index) {
     
 
     backtrack(0);
+    if (!backtrack(0)) {
+       alert("Không tìm thấy giải pháp cho bài toán KenKen.");
+    }
 }

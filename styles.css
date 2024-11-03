@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #333;
+    padding: 8px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.cage-cell {
+    position: relative;
+    font-weight: bold;
+}
+
+.cage-cell::after {
+    content: attr(data-target) attr(data-operand);
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    color: #555;
+}
+.cage-cell {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid black;
+}
+
+.cage-cell.top-border {
+    border-top: 5px solid black;
+}
+
+.cage-cell.bottom-border {
+    border-bottom: 5px solid black;
+}
+
+.cage-cell.left-border {
+    border-left: 5px solid black;
+}
+
+.cage-cell.right-border {
+    border-right: 5px solid black;
+}
+.matrix-cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}

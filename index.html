@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KenKen Solver</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            
+        }
+        a{
+            text-decoration: none;
+        }
+
+    </style>
 </head>
 <body>
     <h1>KenKen Solver</h1>
+    <section id="tutorial">
+        <h1>Cách chơi </h1>
+        <p>B1.Nhập độ lớn của ma trận KenKen.Sau đó nhấn bắt đầu</p>
+        <p>B2.Chọn các ô chung chuồng.Khi chọn xong,nhập kết quả mục tiêu và phép toán của chuồng</p>
+        <p>B3.Nhấn thêm chuồng => Thêm tất cả các chuồng</p>
+        <p>B4.Nhấn giải bài sau khi thêm tất cả các chuồng</p>
+    </section>
     
     <!-- ----------------------------------------------------------------------------------------------------------------> 
     <h1>Nhập độ lớn ma trận</h1>
@@ -20,6 +41,7 @@
         <input type="text" id="operationInput" placeholder="Phép toán (+, -, *, /)">
         <button id="addButton">Thêm chuồng</button>
     </div>
+    
     <!------------------------------------------------------------------------------------------------------------------ -->
     
     <h2>Đề Bài</h2>

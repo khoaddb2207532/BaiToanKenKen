@@ -98,7 +98,7 @@ function validateInputFormat(cells, matrixSize) {
     // Kiểm tra từng chuồng trong `cageMap`
     for (const cage in cageMap) {
         const cageCells = cageMap[cage];
-        console.log(cageCells);
+        // console.log(cageCells);
         if (cageCells.length === 1) {
             continue;
         }
@@ -202,6 +202,7 @@ function solveKenKen() {
         // Lựa chọn ô có ít giá trị hợp lệ nhất
         let cell = selectCellWithMinRemainingValues();
         let possibleValues = getPossibleValues(cell.index);
+        console.log(cell,possibleValues);
         
         for (let num of possibleValues) {
             if (isValid(cell.index, num)) {
@@ -211,9 +212,13 @@ function solveKenKen() {
                 // Áp dụng Constraint Propagation
                 let oldPossibleValues = constraintPropagation(cell.index, num);
                 
-                if (oldPossibleValues && backtrack(index + 1)) return true;
+                if (oldPossibleValues && backtrack(index + 1)) {
+                    // console.log("Next cell!")
+                    return true;
+                }
 
                 // Khôi phục lại trạng thái khi quay lui
+                console.log("Backtrack");
                 cells[cell.index].value = 0;
                 restorePossibleValues(oldPossibleValues);
             }
